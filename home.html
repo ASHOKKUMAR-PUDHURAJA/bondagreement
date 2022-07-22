@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>bond-agreement online</title>
+<style>
+	body
+	{
+			background-color: #D4E7B5;
+	}
+	.bonddetails
+	{
+		
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 10px 20px rgba(95, 95, 95, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+	}
+	h1,h3
+	{
+		text-align: center;
+		color: red
+	}
+	form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.input {
+  border: ipx solid #D4E7B5;
+}
+label
+{
+font-weight: bolder;
+}
+button{
+	background-color:aqua; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: black;
+  border-radius: 12px;
+  font-weight: bolder;
+}
+button:hover
+{
+	background-color:yellowgreen;
+}
+
+form input {
+  width: 370px;
+  height: 50px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: lightyellow;
+}
+
+footer
+			{
+				text-align: center;
+				color:tomato;
+				font-size: 20px;
+				margin-left: 50%;
+			}
+			a,h5{
+				text-decoration: none;
+				font-size: 20px;
+				color:blueviolet;
+
+			}
+td
+{
+	
+	padding: 40px;
+	
+}
+table
+{
+margin-left: 20%;
+}
+</style>
+</head>
+
+<body>
+</hr>
+<div>
+<div id="bonddetails">
+	<h1>ஒப்பந்த பத்திரம்  </h1>
+<h3> வணக்கம் நீங்கள் கீழே உள்ள உங்கள் தகவல்களை சரியாக உள்ளிடவும் </h3>
+	
+	<form>
+		<label>கடன் கொடுப்பவர் :</label>
+		<input type="textbox" name="owner" id="gname" class ="name" placeholder="கடன் கொடுப்பவர் பெயர்"> </br>
+
+		<label> பயனாளர் : </label>
+		<input type="textbox" name="receiver" id="rname" placeholder="பயனாளர் பெயர்" class ="name"></br>
+		
+		<label> பயனாளர் ஊர்: </label>
+		<input type="textbox" name="receiver"  id="place" placeholder="பயனாளர் ஊர் பெயர்" class ="name"></br>
+
+		<label> பயனாளர் தந்தை பெயர் : </label>
+		<input type="textbox" name="receiver" id="rfathername" placeholder="பயனாளர் தந்தை பெயர் " class ="name"></br>
+
+
+		<label>கடன் தொகை :</label>
+		<input type="number" id="amount"></br></br>
+
+
+		<label>கடன் கொடுக்கப்பட்ட நாள் :</label>
+		<input type="date" id="sdate"></br>
+
+		<label> கடன் செலுத்தும் முறை :</label>
+		<select name="கடன்" id="atype">
+			<option value="----">-----</option>
+			<option value="தவணை">தவணை </option>
+			<option value="வட்டி">வட்டி</option>
+		</select></br>
+
+		<label> கடன் செலுத்தும் நாள் : </label>
+		<select name="கடன் நாள்" id="atdate">
+			<option value="---- ">-----  </option>
+			<option value="தினமும் ">தினமும்  </option>
+			<option value="வாரத்திற்கு ">வாரத்திற்கு  </option>
+			<option value="மாதம்  ">மாதம்   </option>
+			<option value="6 மாதம்  ">6 மாதம்</option>	
+			<option value="1 வருடம் ">1 வருடம்</option>
+			<option value="1 வருடம் 6 மாதம்"> 1 வருடம் 6 மாதம்</option>
+			<option value="2 வருடம்">2 வருடம்</option>
+			<option value="3 வருடம்">3 வருடம்</option>
+		</select></br></br>
+
+		<label>கடன் செலுத்தும் கடைசி நாள்:</label>
+		<input type="date"id="ldate"></br>
+		
+		<label>தவணை/வட்டி விகிதம்:  %</label>
+		<input type="number" id="interest"></br>
+		
+		<label>ஆவணம் /சாட்சி :</label></br>
+		<input type="textbox" maxlength="1000" width="2000" height="2000" id="evidence">
+		</br>
+		<input type="submit" onclick="changecontent();return false" value="சமர்ப்பிக்க">
+		
+		</form></div>
+		<footer>
+			<input type='submit' onclick='printcontent();return false'value='பதிவிறக்க/Download'>
+			<h4>Developed By: ASHOKKUMAR PUDHURAJA</h4>
+			<a href="mailto:ashokkumar09082001@gmail.com"><h5>Send feedback</h5></a>
+		</footer>
+		
+		</div>
+		<script>
+
+			function printcontent()
+			{
+				var restorepage=document.body.innerHTML;
+				var printpage=document.getElementById("bonddetails").innerHTML;
+				document.body.innerHTML=printpage;
+				window.print();
+				document.body.innerHTML=restorepage;
+			}
+			function changecontent()
+			{
+				var value="<h1>ஒப்பந்த பத்திரம்  </h1>";
+				value+="<h5>வணக்கம் ,</h5>";
+				value+="<p><b> &emsp; &emsp; &emsp;"+document.getElementById('place').value+"</b> கிராமத்தில் /நகரில் திரு./திருமதி /செல்வி <b>"+document.getElementById('rname').value+"</b> தா/பெ. <b>"+document.getElementById("rfathername").value+"</b> வசித்து வருகிறேன் , நான் எழுதிக்கொடுப்பது என்னவென்றால் திரு ./திருமதி /செல்வி <b>"
+					+document.getElementById('gname').value+"</b> அவர்களிடம் என்னுடைய தனிப்பட்ட /குடும்ப செலவிற்காக  ரூ . "+document.getElementById("amount").value+"/- தொகை  தங்களிடம் "+document.getElementById('interest').value+
+					"%"+document.getElementById("atype").value+"</b>க்கு பெற்றுளேன் , இந்த தொகையை நான் <b>"+document.getElementById("atdate").value+"</b>க்கு  ஒருமுறை செலுத்தி வரும் <b>"
+					+document.getElementById("ldate").value+"</b>  அன்று கொடுக்கப்பட்டுள்ள ஆவணம் ( <b>"+document.getElementById("evidence").value+")</b> பெற்றுக்கொள்கிறேன் என்று உறுதி கொள்கிறேன் .</p>";
+					var today = new Date();
+					var dd = String(today.getDate()).padStart(2, '0');
+					var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+					var yyyy = today.getFullYear();
+					today = mm + '/' + dd + '/' + yyyy;
+					value+="</br></br><p>தேதி : "+today;
+					value+="</br></br></br><table><tr><td>பயனாளர் </td><td> பணம் கொடுப்பவர் </td><td>சாட்சி</td></tr><tr><td>( "+document.getElementById('rname').value+" )</td><td>( "+document.getElementById('gname').value+" )</td><td></td></tr></table>";
+					
+					document.getElementById('bonddetails').innerHTML=value;
+				printcontent();
+				
+			}
+		</script>
+
+		</body>
+		</html>
+
+
+
+
